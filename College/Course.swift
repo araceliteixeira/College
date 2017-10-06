@@ -11,40 +11,55 @@ import Foundation
 class Course {
     
     private var courseId: Int
-    private var name: Int
-    private var employee: Employee
+    private var name: String
+    private var head: Employee
+    private var creditHour: Int
+    private var program: Program
     
     init(){
-        fuel = 0
-        maxSpeed = 0
-        employee = Emp()
+        courseId = 0
+        name = ""
+        head = Employee()
+        creditHour = 0
+        program = Program()
     }
-    init(fuelValue: Int, maxSpeedValue: Int) {
-        self.fuel = fuelValue
-        self.maxSpeed = maxSpeedValue
+    
+    init(_ courseId: Int, _ name: String, _ head: Employee, _ creditHour: Int, _ program: Program) {
+        self.courseId = courseId
+        self.name = name
+        self.head = head
+        self.creditHour = creditHour
+        self.program = program
     }
-    func getFuel() -> Int {
-        return fuel
+    
+    func getCourseId() -> Int {
+        return courseId
     }
-    func getMaxSpeed() -> Int {
-        return maxSpeed
+    func setCourseId(_ courseId: Int) {
+        self.courseId = courseId
     }
-    func getFuel() -> Int {
-        return fuel
+    func getName() -> String {
+        return name
     }
-    func getFuelGauge() -> FuelGauge {
-        return fuelGauge
+    func setName(_ name: String) {
+        self.name = name
     }
-    func setFuel(_ fuel:Int) {
-        self.fuel = fuel
+    func getHead() -> Employee {
+        return head
     }
-    func setMaxSpeed(_ maxSpeed:Int) {
-        self.maxSpeed = maxSpeed
+    func setHead(_ head: Employee) {
+        self.head = head
     }
-    func setFuel(_ fuel:Int) {
-        self.fuel = fuel
+    func getCreditHour() -> Int {
+        return creditHour
     }
-    func setFuelGauge(_ fuelGauge:FuelGauge) {
-        self.fuelGauge = fuelGauge
+    func setCreditHour(_ creditHour: Int) {
+        self.creditHour = creditHour
     }
-}
+    func getProgram() -> Program {
+        return program
+    }
+    func setProgram(_ program: Program) {
+        self.program = program
+    }
+    }
