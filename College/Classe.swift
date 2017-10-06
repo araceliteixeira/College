@@ -1,5 +1,5 @@
 //
-//  Class.swift
+//  Classe.swift
 //  CollegeProject
 //
 //  Created by MacStudent on 2017-10-06.
@@ -8,29 +8,29 @@
 
 import Foundation
 
-class Class {
+class Classe {
     
-    private var classId: Int
+    private var classeId: Int
     private var course: Course
     private var instructor: Employee
     
     init(){
-        classId = 0
+        classeId = 0
         course = Course()
         instructor = Employee()
     }
     
-    init(_ classId: Int, _ course: Course, _ instructor: Employee) {
-        self.classId = classId
+    init(_ classeId: Int, _ course: Course, _ instructor: Employee) {
+        self.classeId = classeId
         self.course = course
         self.instructor = instructor
     }
     
     func getClassId() -> Int {
-        return classId
+        return classeId
     }
     func setClassId(_ classId: Int) {
-        self.classId = classId
+        self.classeId = classId
     }
     func getCourse() -> Course {
         return course

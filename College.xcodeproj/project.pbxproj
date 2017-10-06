@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9B2CD9C01F87A172006EA78A /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2CD9BF1F87A172006EA78A /* Employee.swift */; };
-		9B2CD9CC1F87A2DD006EA78A /* Class.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2CD9C11F87A2DD006EA78A /* Class.swift */; };
+		9B2CD9CC1F87A2DD006EA78A /* Classe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2CD9C11F87A2DD006EA78A /* Classe.swift */; };
 		9B2CD9CD1F87A2DD006EA78A /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2CD9C21F87A2DD006EA78A /* Country.swift */; };
 		9B2CD9CE1F87A2DD006EA78A /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2CD9C31F87A2DD006EA78A /* Course.swift */; };
 		9B2CD9CF1F87A2DD006EA78A /* DepartmentEmployee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2CD9C41F87A2DD006EA78A /* DepartmentEmployee.swift */; };
@@ -37,7 +37,7 @@
 
 /* Begin PBXFileReference section */
 		9B2CD9BF1F87A172006EA78A /* Employee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
-		9B2CD9C11F87A2DD006EA78A /* Class.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Class.swift; sourceTree = "<group>"; };
+		9B2CD9C11F87A2DD006EA78A /* Classe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Classe.swift; sourceTree = "<group>"; };
 		9B2CD9C21F87A2DD006EA78A /* Country.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		9B2CD9C31F87A2DD006EA78A /* Course.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		9B2CD9C41F87A2DD006EA78A /* DepartmentEmployee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DepartmentEmployee.swift; sourceTree = "<group>"; };
@@ -85,7 +85,7 @@
 			children = (
 				9BAE83FF1F879EDC0056F087 /* main.swift */,
 				9BAE84061F879F1D0056F087 /* Department.swift */,
-				9B2CD9C11F87A2DD006EA78A /* Class.swift */,
+				9B2CD9C11F87A2DD006EA78A /* Classe.swift */,
 				9B2CD9C21F87A2DD006EA78A /* Country.swift */,
 				9B2CD9C31F87A2DD006EA78A /* Course.swift */,
 				9B2CD9C41F87A2DD006EA78A /* DepartmentEmployee.swift */,
@@ -162,7 +162,7 @@
 				9B2CD9D21F87A2DD006EA78A /* Program.swift in Sources */,
 				9B2CD9CE1F87A2DD006EA78A /* Course.swift in Sources */,
 				9B2CD9D31F87A2DD006EA78A /* Schedule.swift in Sources */,
-				9B2CD9CC1F87A2DD006EA78A /* Class.swift in Sources */,
+				9B2CD9CC1F87A2DD006EA78A /* Classe.swift in Sources */,
 				9B2CD9D61F87A2DD006EA78A /* StudentClass.swift in Sources */,
 				9B2CD9D11F87A2DD006EA78A /* GradeAux.swift in Sources */,
 				9BAE84001F879EDC0056F087 /* main.swift in Sources */,
