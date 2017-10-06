@@ -10,41 +10,66 @@ import Foundation
 
 class Employee {
     
-    private var departmentId: Int
-    private var name : Int
-    private var employee: Employee
+    private var employeeId: Int
+    private var name : String
+    private var mainFunction: Int
+    private var startDate: NSDate
+    private var endDate: NSDate
+    
     
     init(){
-        fuel = 0
-        maxSpeed = 0
-        employee = Emp()
+        employeeId = 0
+        name = ""
+        mainFunction = 0
+        startDate = NSDate()
+        endDate = NSDate()
     }
-    init(fuelValue: Int, maxSpeedValue: Int) {
-        fuel = fuelValue
-        maxSpeed = maxSpeedValue
+    init(_ employeeId: Int, _ name: String, _ mainFunction: Int, _ startDate: NSDate, _ endDate: NSDate) {
+        self.employeeId = employeeId
+        self.name = name
+        self.mainFunction = mainFunction
+        self.startDate = startDate
+        self.endDate = endDate
     }
-    func getFuel() -> Int {
-        return fuel
+    
+    func getEmployeeId() -> Int {
+        return employeeId
     }
-    func getMaxSpeed() -> Int {
-        return maxSpeed
+    
+    func setEmployeeId(_ employeeId: Int) {
+        self.employeeId = employeeId
     }
-    func getFuel() -> Int {
-        return fuel
+    
+    func getname() -> String {
+        return name
     }
-    func getFuelGauge() -> FuelGauge {
-        return fuelGauge
+
+    func setName(_ name: String) {
+        self.name = name
     }
-    func setFuel(_ fuel:Int) {
-        self.fuel = fuel
+    
+    func getMainFunction() -> Int {
+        return mainFunction
     }
-    func setMaxSpeed(_ maxSpeed:Int) {
-        self.maxSpeed = maxSpeed
+    
+    func setMainFunction(_ mainFunction: Int) {
+        self.mainFunction = mainFunction
     }
-    func setFuel(_ fuel:Int) {
-        self.fuel = fuel
+    
+    func getStartDate() -> NSDate {
+        return startDate
     }
-    func setFuelGauge(_ fuelGauge:FuelGauge) {
-        self.fuelGauge = fuelGauge
+    
+    func setStartDate(_ startDate: NSDate) {
+        self.startDate = startDate
     }
+    
+    func getEndDate() -> NSDate {
+        return endDate
+    }
+    
+    func setEndDate(_ endDate: NSDate) {
+        self.endDate = endDate
+    }
+    
 }
