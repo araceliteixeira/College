@@ -11,40 +11,37 @@ import Foundation
 class Class {
     
     private var classId: Int
-    private var name: Int
-    private var employee: Employee
+    private var course: Course
+    private var instructor: Employee
     
     init(){
-        fuel = 0
-        maxSpeed = 0
-        employee = Emp()
+        classId = 0
+        course = Course()
+        instructor = Employee()
     }
-    init(fuelValue: Int, maxSpeedValue: Int) {
-        self.fuel = fuelValue
-        self.maxSpeed = maxSpeedValue
+    
+    init(_ classId: Int, _ course: Course, _ instructor: Employee) {
+        self.classId = classId
+        self.course = course
+        self.instructor = instructor
     }
-    func getFuel() -> Int {
-        return fuel
+    
+    func getClassId() -> Int {
+        return classId
     }
-    func getMaxSpeed() -> Int {
-        return maxSpeed
+    func setClassId(_ classId: Int) {
+        self.classId = classId
     }
-    func getFuel() -> Int {
-        return fuel
+    func getCourse() -> Course {
+        return course
     }
-    func getFuelGauge() -> FuelGauge {
-        return fuelGauge
+    func setCourse(_ course: Course) {
+        self.course = course
     }
-    func setFuel(_ fuel:Int) {
-        self.fuel = fuel
+    func getInstructor() -> Employee {
+        return instructor
     }
-    func setMaxSpeed(_ maxSpeed:Int) {
-        self.maxSpeed = maxSpeed
-    }
-    func setFuel(_ fuel:Int) {
-        self.fuel = fuel
-    }
-    func setFuelGauge(_ fuelGauge:FuelGauge) {
-        self.fuelGauge = fuelGauge
+    func setInstructor(_ instructor: Employee) {
+        self.instructor = instructor
     }
 }
