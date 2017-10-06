@@ -12,33 +12,36 @@ class Department {
     
     private var departmentId: Int
     private var name: String
-    private var employee: Employee
+    private var head: Employee
     
     init(){
         departmentId = 0
         name = ""
-        employee = Employee()
+        head = Employee()
     }
-    init(fuelValue: Int, maxSpeedValue: String) {
-        self.departmentId = fuelValue
-        self.name = maxSpeedValue
+    
+    init(_ departmentId: Int, _ name: String, _ head: Employee) {
+        self.departmentId = departmentId
+        self.name = name
+        self.head = head
     }
-    func getFuel() -> Int {
+    
+    func getDepartmentId() -> Int {
         return departmentId
     }
     func getName() -> String {
         return name
     }
-    func getEmployee() -> Employee {
-        return employee
+    func getHead() -> Employee {
+        return head
     }
-    func setFuel(_ departmentId:Int) {
+    func setDepartmentId(_ departmentId:Int) {
         self.departmentId = departmentId
     }
     func setName(_ name:String) {
         self.name = name
     }
-    func setEmployee(_ employee:Employee) {
-        self.employee = employee
+    func setHead(_ head:Employee) {
+        self.head = head
     }
 }

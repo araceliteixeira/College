@@ -17,7 +17,7 @@ class Status {
         statusId = 0
         description = ""
     }
-    init(statusId: Int, description: String) {
+    init(_ statusId: Int, _ description: String) {
         self.statusId = statusId
         self.description = description
     }

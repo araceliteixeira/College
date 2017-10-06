@@ -17,7 +17,7 @@ class Function {
         functionId = 0
         description = ""
     }
-    init(functionId: Int, description: String) {
+    init(_ functionId: Int, _ description: String) {
         self.functionId = functionId
         self.description = description
     }
