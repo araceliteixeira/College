@@ -10,6 +10,9 @@ import Foundation
 
 class Util {
     static func convertStringToDate(_ stringDate: String) -> NSDate {
+        if stringDate == "" {
+            return NSDate()
+        }
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         return dateFormatter.date(from:stringDate)! as NSDate

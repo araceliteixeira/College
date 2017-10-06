@@ -8,12 +8,13 @@
 
 import Foundation
 
+var college = College()
 
-var function1 = Function(1,"security")
-var function2 = Function(2,"teacher")
-var employee1 = Employee(1,"Jhon", function1, NSDate(), NSDate())
-var employee2 = Employee(2,"Issa",function2, NSDate(), NSDate())
+var employees: [Employee] = []
+employees.append(Employee(1, "John", college.getFunctions()[1], "2016-02-01", ""))
+employees.append(Employee(1, "Mary", college.getFunctions()[2], "2016-02-01", ""))
 
+college.setEmployees(employees)
 
 
 func TestEmployeeFunction() {
