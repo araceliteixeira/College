@@ -11,7 +11,7 @@ import Foundation
 class DepartmentEmployee {
     
     private var departmentEmployeeId: Int
-    private var name : Int
+    private var name: Int
     private var employee: Employee
     
     init(){
@@ -20,8 +20,8 @@ class DepartmentEmployee {
         employee = Emp()
     }
     init(fuelValue: Int, maxSpeedValue: Int) {
-        fuel = fuelValue
-        maxSpeed = maxSpeedValue
+        self.fuel = fuelValue
+        self.maxSpeed = maxSpeedValue
     }
     func getFuel() -> Int {
         return fuel

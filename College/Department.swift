@@ -11,40 +11,34 @@ import Foundation
 class Department {
     
     private var departmentId: Int
-    private var name : Int
+    private var name: String
     private var employee: Employee
     
     init(){
-        fuel = 0
-        maxSpeed = 0
-        employee = Emp()
+        departmentId = 0
+        name = ""
+        employee = Employee()
     }
-    init(fuelValue: Int, maxSpeedValue: Int) {
-        fuel = fuelValue
-        maxSpeed = maxSpeedValue
-    }
-    func getFuel() -> Int {
-        return fuel
-    }
-    func getMaxSpeed() -> Int {
-        return maxSpeed
+    init(fuelValue: Int, maxSpeedValue: String) {
+        self.departmentId = fuelValue
+        self.name = maxSpeedValue
     }
     func getFuel() -> Int {
-        return fuel
+        return departmentId
     }
-    func getFuelGauge() -> FuelGauge {
-        return fuelGauge
+    func getName() -> String {
+        return name
     }
-    func setFuel(_ fuel:Int) {
-        self.fuel = fuel
+    func getEmployee() -> Employee {
+        return employee
     }
-    func setMaxSpeed(_ maxSpeed:Int) {
-        self.maxSpeed = maxSpeed
+    func setFuel(_ departmentId:Int) {
+        self.departmentId = departmentId
     }
-    func setFuel(_ fuel:Int) {
-        self.fuel = fuel
+    func setName(_ name:String) {
+        self.name = name
     }
-    func setFuelGauge(_ fuelGauge:FuelGauge) {
-        self.fuelGauge = fuelGauge
+    func setEmployee(_ employee:Employee) {
+        self.employee = employee
     }
 }

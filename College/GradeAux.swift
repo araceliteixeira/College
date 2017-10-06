@@ -11,40 +11,44 @@ import Foundation
 class GradeAux {
     
     private var gradeAuxId: Int
-    private var name : Int
-    private var employee: Employee
+    private var letter: String
+    private var pointsStart: String
+    private var pointsEnd: String
     
     init(){
-        fuel = 0
-        maxSpeed = 0
-        employee = Emp()
+        gradeAuxId = 0
+        letter = ""
+        pointsStart = ""
+        pointsEnd = ""
     }
-    init(fuelValue: Int, maxSpeedValue: Int) {
-        fuel = fuelValue
-        maxSpeed = maxSpeedValue
+    init(gradeAuxId: Int, letter: String, pointsStart: String, pointsEnd: String) {
+        self.gradeAuxId = gradeAuxId
+        self.letter = letter
+        self.pointsStart = pointsStart
+        self.pointsEnd = pointsEnd
     }
-    func getFuel() -> Int {
-        return fuel
+    func getGradeAuxId() -> Int {
+        return gradeAuxId
     }
-    func getMaxSpeed() -> Int {
-        return maxSpeed
+    func getLetter() -> String {
+        return letter
     }
-    func getFuel() -> Int {
-        return fuel
+    func getPointsStart() -> String {
+        return pointsStart
     }
-    func getFuelGauge() -> FuelGauge {
-        return fuelGauge
+    func getPointsEnd() -> String {
+        return pointsEnd
     }
-    func setFuel(_ fuel:Int) {
-        self.fuel = fuel
+    func setGradeAuxId(_ gradeAuxId:Int) {
+        self.gradeAuxId = gradeAuxId
     }
-    func setMaxSpeed(_ maxSpeed:Int) {
-        self.maxSpeed = maxSpeed
+    func setLetter(_ letter:String) {
+        self.letter = letter
     }
-    func setFuel(_ fuel:Int) {
-        self.fuel = fuel
+    func setPointsStart(_ pointsStart:String) {
+        self.pointsStart = pointsStart
     }
-    func setFuelGauge(_ fuelGauge:FuelGauge) {
-        self.fuelGauge = fuelGauge
+    func setPointsEnd(_ pointsEnd:String) {
+        self.pointsEnd = pointsEnd
     }
 }

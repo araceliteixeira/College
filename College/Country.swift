@@ -11,40 +11,26 @@ import Foundation
 class Country {
     
     private var countryId: Int
-    private var name : Int
-    private var employee: Employee
+    private var name: String
     
     init(){
-        fuel = 0
-        maxSpeed = 0
-        employee = Emp()
+        countryId = 0
+        name = ""
     }
-    init(fuelValue: Int, maxSpeedValue: Int) {
-        fuel = fuelValue
-        maxSpeed = maxSpeedValue
+    init(countryId: Int, name: String) {
+        self.countryId = countryId
+        self.name = name
     }
-    func getFuel() -> Int {
-        return fuel
+    func getCountryId() -> Int {
+        return countryId
     }
-    func getMaxSpeed() -> Int {
-        return maxSpeed
+    func getName() -> String {
+        return name
     }
-    func getFuel() -> Int {
-        return fuel
+    func setCountryId(_ countryId:Int) {
+        self.countryId = countryId
     }
-    func getFuelGauge() -> FuelGauge {
-        return fuelGauge
-    }
-    func setFuel(_ fuel:Int) {
-        self.fuel = fuel
-    }
-    func setMaxSpeed(_ maxSpeed:Int) {
-        self.maxSpeed = maxSpeed
-    }
-    func setFuel(_ fuel:Int) {
-        self.fuel = fuel
-    }
-    func setFuelGauge(_ fuelGauge:FuelGauge) {
-        self.fuelGauge = fuelGauge
+    func setName(_ name:String) {
+        self.name = name
     }
 }
