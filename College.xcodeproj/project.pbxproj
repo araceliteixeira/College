@@ -8,6 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		9B2CD9C01F87A172006EA78A /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2CD9BF1F87A172006EA78A /* Employee.swift */; };
+		9B2CD9CC1F87A2DD006EA78A /* Class.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2CD9C11F87A2DD006EA78A /* Class.swift */; };
+		9B2CD9CD1F87A2DD006EA78A /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2CD9C21F87A2DD006EA78A /* Country.swift */; };
+		9B2CD9CE1F87A2DD006EA78A /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2CD9C31F87A2DD006EA78A /* Course.swift */; };
+		9B2CD9CF1F87A2DD006EA78A /* DepartmentEmployee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2CD9C41F87A2DD006EA78A /* DepartmentEmployee.swift */; };
+		9B2CD9D01F87A2DD006EA78A /* Function.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2CD9C51F87A2DD006EA78A /* Function.swift */; };
+		9B2CD9D11F87A2DD006EA78A /* GradeAux.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2CD9C61F87A2DD006EA78A /* GradeAux.swift */; };
+		9B2CD9D21F87A2DD006EA78A /* Program.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2CD9C71F87A2DD006EA78A /* Program.swift */; };
+		9B2CD9D31F87A2DD006EA78A /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2CD9C81F87A2DD006EA78A /* Schedule.swift */; };
+		9B2CD9D41F87A2DD006EA78A /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2CD9C91F87A2DD006EA78A /* Status.swift */; };
+		9B2CD9D51F87A2DD006EA78A /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2CD9CA1F87A2DD006EA78A /* Student.swift */; };
+		9B2CD9D61F87A2DD006EA78A /* StudentClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2CD9CB1F87A2DD006EA78A /* StudentClass.swift */; };
 		9BAE84001F879EDC0056F087 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAE83FF1F879EDC0056F087 /* main.swift */; };
 		9BAE84071F879F1D0056F087 /* Department.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAE84061F879F1D0056F087 /* Department.swift */; };
 /* End PBXBuildFile section */
@@ -26,6 +37,17 @@
 
 /* Begin PBXFileReference section */
 		9B2CD9BF1F87A172006EA78A /* Employee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
+		9B2CD9C11F87A2DD006EA78A /* Class.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Class.swift; sourceTree = "<group>"; };
+		9B2CD9C21F87A2DD006EA78A /* Country.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
+		9B2CD9C31F87A2DD006EA78A /* Course.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
+		9B2CD9C41F87A2DD006EA78A /* DepartmentEmployee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DepartmentEmployee.swift; sourceTree = "<group>"; };
+		9B2CD9C51F87A2DD006EA78A /* Function.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Function.swift; sourceTree = "<group>"; };
+		9B2CD9C61F87A2DD006EA78A /* GradeAux.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradeAux.swift; sourceTree = "<group>"; };
+		9B2CD9C71F87A2DD006EA78A /* Program.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Program.swift; sourceTree = "<group>"; };
+		9B2CD9C81F87A2DD006EA78A /* Schedule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
+		9B2CD9C91F87A2DD006EA78A /* Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
+		9B2CD9CA1F87A2DD006EA78A /* Student.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
+		9B2CD9CB1F87A2DD006EA78A /* StudentClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentClass.swift; sourceTree = "<group>"; };
 		9BAE83FC1F879EDC0056F087 /* College */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = College; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BAE83FF1F879EDC0056F087 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		9BAE84061F879F1D0056F087 /* Department.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Department.swift; sourceTree = "<group>"; };
@@ -63,6 +85,17 @@
 			children = (
 				9BAE83FF1F879EDC0056F087 /* main.swift */,
 				9BAE84061F879F1D0056F087 /* Department.swift */,
+				9B2CD9C11F87A2DD006EA78A /* Class.swift */,
+				9B2CD9C21F87A2DD006EA78A /* Country.swift */,
+				9B2CD9C31F87A2DD006EA78A /* Course.swift */,
+				9B2CD9C41F87A2DD006EA78A /* DepartmentEmployee.swift */,
+				9B2CD9C51F87A2DD006EA78A /* Function.swift */,
+				9B2CD9C61F87A2DD006EA78A /* GradeAux.swift */,
+				9B2CD9C71F87A2DD006EA78A /* Program.swift */,
+				9B2CD9C81F87A2DD006EA78A /* Schedule.swift */,
+				9B2CD9C91F87A2DD006EA78A /* Status.swift */,
+				9B2CD9CA1F87A2DD006EA78A /* Student.swift */,
+				9B2CD9CB1F87A2DD006EA78A /* StudentClass.swift */,
 				9B2CD9BF1F87A172006EA78A /* Employee.swift */,
 			);
 			path = College;
@@ -126,9 +159,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B2CD9D21F87A2DD006EA78A /* Program.swift in Sources */,
+				9B2CD9CE1F87A2DD006EA78A /* Course.swift in Sources */,
+				9B2CD9D31F87A2DD006EA78A /* Schedule.swift in Sources */,
+				9B2CD9CC1F87A2DD006EA78A /* Class.swift in Sources */,
+				9B2CD9D61F87A2DD006EA78A /* StudentClass.swift in Sources */,
+				9B2CD9D11F87A2DD006EA78A /* GradeAux.swift in Sources */,
 				9BAE84001F879EDC0056F087 /* main.swift in Sources */,
 				9B2CD9C01F87A172006EA78A /* Employee.swift in Sources */,
+				9B2CD9D51F87A2DD006EA78A /* Student.swift in Sources */,
+				9B2CD9CD1F87A2DD006EA78A /* Country.swift in Sources */,
 				9BAE84071F879F1D0056F087 /* Department.swift in Sources */,
+				9B2CD9CF1F87A2DD006EA78A /* DepartmentEmployee.swift in Sources */,
+				9B2CD9D01F87A2DD006EA78A /* Function.swift in Sources */,
+				9B2CD9D41F87A2DD006EA78A /* Status.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
