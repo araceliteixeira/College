@@ -10,41 +10,66 @@ import Foundation
 
 class Student {
     
-    private var studenttId: Int
-    private var name : Int
-    private var employee: Employee
+    private var studentId: Int
+    private var name: String
+    private var originCountry: Country
+    private var startDate: NSDate
+    private var endDate: NSDate
+    private var status: Status
     
     init(){
-        fuel = 0
-        maxSpeed = 0
-        employee = Emp()
+        studentId = 0
+        name = ""
+        originCountry = Country()
+        startDate = NSDate()
+        endDate = NSDate()
+        status = Status()
     }
-    init(fuelValue: Int, maxSpeedValue: Int) {
-        self.fuel = fuelValue
-        self.maxSpeed = maxSpeedValue
+    
+    init(_ studentId: Int, _ name: String, _ originCountry: Country, _ startDate: NSDate, _ endDate: NSDate, _ status: Status) {
+        self.studentId = studentId
+        self.name = name
+        self.originCountry = Country()
+        self.startDate = startDate
+        self.endDate = endDate
+        self.status = Status()
     }
-    func getFuel() -> Int {
-        return fuel
+    
+    func getStudentId() -> Int {
+        return studentId
     }
-    func getMaxSpeed() -> Int {
-        return maxSpeed
+    func getName() -> String {
+        return name
     }
-    func getFuel() -> Int {
-        return fuel
+    func getOriginCountry() -> Country {
+        return originCountry
     }
-    func getFuelGauge() -> FuelGauge {
-        return fuelGauge
+    func getStartDate() -> NSDate {
+        return startDate
     }
-    func setFuel(_ fuel:Int) {
-        self.fuel = fuel
+    func getEndDate() -> NSDate {
+        return endDate
     }
-    func setMaxSpeed(_ maxSpeed:Int) {
-        self.maxSpeed = maxSpeed
+    func getStatus() -> Status {
+        return status
     }
-    func setFuel(_ fuel:Int) {
-        self.fuel = fuel
+    
+    func setStudentId(_ studentId:Int) {
+        self.studentId = studentId
     }
-    func setFuelGauge(_ fuelGauge:FuelGauge) {
-        self.fuelGauge = fuelGauge
+    func setName(_ name:String) {
+        self.name = name
+    }
+    func setOriginCountry(_ originCountry:Country) {
+        self.originCountry = originCountry
+    }
+    func setStartDate(_ startDate: NSDate) {
+        self.startDate = startDate
+    }
+    func setEndDate(_ endDate: NSDate) {
+        self.endDate = endDate
+    }
+    func setStatus(_ status:Status) {
+        self.status = status
     }
 }

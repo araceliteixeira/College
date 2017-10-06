@@ -17,7 +17,7 @@ class Country {
         countryId = 0
         name = ""
     }
-    init(countryId: Int, name: String) {
+    init(_ countryId: Int, _ name: String) {
         self.countryId = countryId
         self.name = name
     }

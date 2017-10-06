@@ -21,12 +21,14 @@ class GradeAux {
         pointsStart = ""
         pointsEnd = ""
     }
-    init(gradeAuxId: Int, letter: String, pointsStart: String, pointsEnd: String) {
+    
+    init(_ gradeAuxId: Int, _ letter: String, _ pointsStart: String, _ pointsEnd: String) {
         self.gradeAuxId = gradeAuxId
         self.letter = letter
         self.pointsStart = pointsStart
         self.pointsEnd = pointsEnd
     }
+    
     func getGradeAuxId() -> Int {
         return gradeAuxId
     }

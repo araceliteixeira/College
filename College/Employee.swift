@@ -12,7 +12,7 @@ class Employee {
     
     private var employeeId: Int
     private var name : String
-    private var mainFunction: Int
+    private var mainFunction: Function
     private var startDate: NSDate
     private var endDate: NSDate
     
@@ -20,14 +20,14 @@ class Employee {
     init(){
         employeeId = 0
         name = ""
-        mainFunction = 0
+        mainFunction = Function()
         startDate = NSDate()
         endDate = NSDate()
     }
-    init(_ employeeId: Int, _ name: String, _ mainFunction: Int, _ startDate: NSDate, _ endDate: NSDate) {
+    init(_ employeeId: Int, _ name: String, _ mainFunction: Function, _ startDate: NSDate, _ endDate: NSDate) {
         self.employeeId = employeeId
         self.name = name
-        self.mainFunction = mainFunction
+        self.mainFunction = Function()
         self.startDate = startDate
         self.endDate = endDate
     }
@@ -48,11 +48,11 @@ class Employee {
         self.name = name
     }
     
-    func getMainFunction() -> Int {
+    func getMainFunction() -> Function {
         return mainFunction
     }
     
-    func setMainFunction(_ mainFunction: Int) {
+    func setMainFunction(_ mainFunction: Function) {
         self.mainFunction = mainFunction
     }
     

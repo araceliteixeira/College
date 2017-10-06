@@ -11,40 +11,65 @@ import Foundation
 class StudentClass {
     
     private var studentClassId: Int
-    private var name: Int
-    private var employee: Employee
+    private var classe: Classe
+    private var student: Student
+    private var gradeAssig: Int
+    private var gradeTest: Int
+    private var gradeProject: Int
     
     init(){
-        fuel = 0
-        maxSpeed = 0
-        employee = Emp()
+        studentClassId = 0
+        classe = Classe()
+        student = Student()
+        gradeAssig = 0
+        gradeTest = 0
+        gradeProject = 0
     }
-    init(fuelValue: Int, maxSpeedValue: Int) {
-        self.fuel = fuelValue
-        self.maxSpeed = maxSpeedValue
+    
+    init(_ studentClassId: Int, _ classe: Classe, _ student: Student, _ gradeAssig: Int, _ gradeTest: Int, _ gradeProject: Int) {
+        self.studentClassId = studentClassId
+        self.name = Classe()
+        self.originCountry = Country()
+        self.gradeAssig = gradeAssig
+        self.gradeTest = gradeTest
+        self.gradeProject = gradeProject
     }
-    func getFuel() -> Int {
-        return fuel
+    
+    func getStudentId() -> Int {
+        return studentClassId
     }
-    func getMaxSpeed() -> Int {
-        return maxSpeed
+    func getClasse() -> Classe {
+        return classe
     }
-    func getFuel() -> Int {
-        return fuel
+    func getStudent() -> Student {
+        return student
     }
-    func getFuelGauge() -> FuelGauge {
-        return fuelGauge
+    func getGradeAssig() -> Int {
+        return gradeAssig
     }
-    func setFuel(_ fuel:Int) {
-        self.fuel = fuel
+    func getGradeTest() -> Int {
+        return gradeTest
     }
-    func setMaxSpeed(_ maxSpeed:Int) {
-        self.maxSpeed = maxSpeed
+    func getGradeProject() -> Int {
+        return gradeProject
     }
-    func setFuel(_ fuel:Int) {
-        self.fuel = fuel
+    
+    func setStudentId(_ studentClassId:Int) {
+        self.studentClassId = studentClassId
     }
-    func setFuelGauge(_ fuelGauge:FuelGauge) {
-        self.fuelGauge = fuelGauge
+    func setName(_ name:Classe) {
+        self.name = name
+    }
+    func setStudent(_ student:Student) {
+        self.student = student
+    }
+    func setGradeAssig(_ gradeAssig: Int) {
+        self.gradeAssig = gradeAssig
+    }
+    func setGradeTest(_ gradeTest: Int) {
+        self.gradeTest = gradeTest
+    }
+    func setGradeProject(_ gradeProject:Int) {
+        self.gradeProject = gradeProject
     }
 }
