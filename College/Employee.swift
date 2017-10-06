@@ -16,7 +16,6 @@ class Employee {
     private var startDate: NSDate
     private var endDate: NSDate
     
-    
     init(){
         employeeId = 0
         name = ""
@@ -24,12 +23,12 @@ class Employee {
         startDate = NSDate()
         endDate = NSDate()
     }
-    init(_ employeeId: Int, _ name: String, _ mainFunction: Function, _ startDate: NSDate, _ endDate: NSDate) {
+    init(_ employeeId: Int, _ name: String, _ mainFunction: Function, _ startDate: String, _ endDate: String) {
         self.employeeId = employeeId
         self.name = name
         self.mainFunction = Function()
-        self.startDate = startDate
-        self.endDate = endDate
+        self.startDate = Util.convertStringToDate(startDate)
+        self.endDate = Util.convertStringToDate(endDate)
     }
     
     func getEmployeeId() -> Int {
@@ -40,7 +39,7 @@ class Employee {
         self.employeeId = employeeId
     }
     
-    func getname() -> String {
+    func getName() -> String {
         return name
     }
 
@@ -56,20 +55,19 @@ class Employee {
         self.mainFunction = mainFunction
     }
     
-    func getStartDate() -> NSDate {
-        return startDate
+    func getStartDate() -> String {
+        return Util.convertDateToString(startDate)
     }
     
-    func setStartDate(_ startDate: NSDate) {
-        self.startDate = startDate
+    func setStartDate(_ startDate: String) {
+        self.startDate = Util.convertStringToDate(startDate)
     }
     
-    func getEndDate() -> NSDate {
-        return endDate
+    func getEndDate() -> String {
+        return Util.convertDateToString(endDate)
     }
     
-    func setEndDate(_ endDate: NSDate) {
-        self.endDate = endDate
+    func setEndDate(_ endDate: String) {
+        self.endDate = Util.convertStringToDate(endDate)
     }
-    
 }

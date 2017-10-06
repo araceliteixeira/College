@@ -26,12 +26,12 @@ class Student {
         status = Status()
     }
     
-    init(_ studentId: Int, _ name: String, _ originCountry: Country, _ startDate: NSDate, _ endDate: NSDate, _ status: Status) {
+    init(_ studentId: Int, _ name: String, _ originCountry: Country, _ startDate: String, _ endDate: String, _ status: Status) {
         self.studentId = studentId
         self.name = name
         self.originCountry = Country()
-        self.startDate = startDate
-        self.endDate = endDate
+        self.startDate = Util.convertStringToDate(startDate)
+        self.endDate = Util.convertStringToDate(endDate)
         self.status = Status()
     }
     
@@ -44,11 +44,11 @@ class Student {
     func getOriginCountry() -> Country {
         return originCountry
     }
-    func getStartDate() -> NSDate {
-        return startDate
+    func getStartDate() -> String {
+        return Util.convertDateToString(startDate)
     }
-    func getEndDate() -> NSDate {
-        return endDate
+    func getEndDate() -> String {
+        return Util.convertDateToString(endDate)
     }
     func getStatus() -> Status {
         return status
@@ -63,11 +63,11 @@ class Student {
     func setOriginCountry(_ originCountry:Country) {
         self.originCountry = originCountry
     }
-    func setStartDate(_ startDate: NSDate) {
-        self.startDate = startDate
+    func setStartDate(_ startDate: String) {
+        self.startDate = Util.convertStringToDate(startDate)
     }
-    func setEndDate(_ endDate: NSDate) {
-        self.endDate = endDate
+    func setEndDate(_ endDate: String) {
+        self.endDate = Util.convertStringToDate(endDate)
     }
     func setStatus(_ status:Status) {
         self.status = status
