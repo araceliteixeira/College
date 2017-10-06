@@ -28,8 +28,8 @@ class StudentClass {
     
     init(_ studentClassId: Int, _ classe: Classe, _ student: Student, _ gradeAssig: Int, _ gradeTest: Int, _ gradeProject: Int) {
         self.studentClassId = studentClassId
-        self.name = Classe()
-        self.originCountry = Country()
+        self.classe = Classe()
+        self.student = Student()
         self.gradeAssig = gradeAssig
         self.gradeTest = gradeTest
         self.gradeProject = gradeProject
@@ -57,8 +57,8 @@ class StudentClass {
     func setStudentId(_ studentClassId:Int) {
         self.studentClassId = studentClassId
     }
-    func setName(_ name:Classe) {
-        self.name = name
+    func setClasse(_ classe:Classe) {
+        self.classe = classe
     }
     func setStudent(_ student:Student) {
         self.student = student
