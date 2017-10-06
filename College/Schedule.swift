@@ -1,5 +1,5 @@
 //
-//  Squedule.swift
+//  Schedule.swift
 //  CollegeProject
 //
 //  Created by MacStudent on 2017-10-06.
@@ -8,43 +8,77 @@
 
 import Foundation
 
-class Squedule {
+class Schedule {
     
-    private var squeduleId: Int
-    private var name: Int
-    private var employee: Employee
+    private var scheduleId: Int
+    private var classe: Classe
+    private var weekday: String
+    private var startHour: String
+    private var endHour: String
+    private var startDate: NSDate
+    private var endDate: NSDate
     
     init(){
-        fuel = 0
-        maxSpeed = 0
-        employee = Emp()
+        scheduleId = 0
+        classe = Classe()
+        weekday = ""
+        startHour = ""
+        endHour = ""
+        startDate = NSDate()
+        endDate = NSDate()
     }
-    init(fuelValue: Int, maxSpeedValue: Int) {
-        self.fuel = fuelValue
-        self.maxSpeed = maxSpeedValue
+    
+    init(_ scheduleId: Int, _ classe: Classe, _ weekday: String, _ startHour: String, _ endHour: String, _ startDate: NSDate, _ endDate: NSDate) {
+        self.scheduleId = 0
+        self.classe = Classe()
+        self.weekday = ""
+        self.startHour = ""
+        self.endHour = ""
+        self.startDate = NSDate()
+        self.endDate = NSDate()
     }
-    func getFuel() -> Int {
-        return fuel
+    
+    func getScheduleId() -> Int {
+        return scheduleId
     }
-    func getMaxSpeed() -> Int {
-        return maxSpeed
+    func setScheduleId(_ scheduleId: Int) {
+        self.scheduleId = scheduleId
     }
-    func getFuel() -> Int {
-        return fuel
+    func getClasse() -> Classe {
+        return classe
     }
-    func getFuelGauge() -> FuelGauge {
-        return fuelGauge
+    func setClasse(_ classe: Classe) {
+        self.classe = classe
     }
-    func setFuel(_ fuel:Int) {
-        self.fuel = fuel
+    func getWeekday() -> String {
+        return weekday
     }
-    func setMaxSpeed(_ maxSpeed:Int) {
-        self.maxSpeed = maxSpeed
+    func setWeekday(_ weekday: String) {
+        self.weekday = weekday
     }
-    func setFuel(_ fuel:Int) {
-        self.fuel = fuel
+    func getStartHour() -> String {
+        return startHour
     }
-    func setFuelGauge(_ fuelGauge:FuelGauge) {
-        self.fuelGauge = fuelGauge
+    func setStartHour(_ startHour: String) {
+        self.startHour = startHour
     }
+    func getEndHour() -> String {
+        return endHour
+    }
+    func setEndHour(_ endHour: String) {
+        self.endHour = endHour
+    }
+    func getStartDate() -> NSDate {
+        return startDate
+    }
+    func setStartDate(_ startDate: NSDate) {
+        self.startDate = startDate
+    }
+    func getEndDate() -> NSDate {
+        return endDate
+    }
+    func setEndDate(_ endDate: NSDate) {
+        self.endDate = endDate
+    }
+    
 }
