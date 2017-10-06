@@ -26,11 +26,11 @@ class Classe {
         self.instructor = instructor
     }
     
-    func getClassId() -> Int {
+    func getClasseId() -> Int {
         return classeId
     }
-    func setClassId(_ classId: Int) {
-        self.classeId = classId
+    func setClasseId(_ classeId: Int) {
+        self.classeId = classeId
     }
     func getCourse() -> Course {
         return course
