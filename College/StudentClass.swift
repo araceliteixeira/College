@@ -1,5 +1,5 @@
 //
-//  Department.swift
+//  StudentClass.swift
 //  CollegeProject
 //
 //  Created by MacStudent on 2017-10-06.
@@ -8,9 +8,9 @@
 
 import Foundation
 
-class Department {
+class StudentClass {
     
-    private var departmentId: Int
+    private var studentClassId: Int
     private var name : Int
     private var employee: Employee
     
