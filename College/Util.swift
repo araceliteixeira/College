@@ -9,18 +9,19 @@
 import Foundation
 
 class Util {
+    static let dateFormatter = DateFormatter()
+    static let dateFormat = "yyyy-MM-dd"
+    
     static func convertStringToDate(_ stringDate: String) -> NSDate {
         if stringDate == "" {
             return NSDate()
         }
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
+        dateFormatter.dateFormat = dateFormat
         return dateFormatter.date(from:stringDate)! as NSDate
     }
     
     static func convertDateToString(_ date: NSDate) -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
+        dateFormatter.dateFormat = dateFormat
         return dateFormatter.string(from:date as Date)
     }
 }

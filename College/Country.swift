@@ -8,8 +8,12 @@
 
 import Foundation
 
-class Country {
-    
+enum Country: Int {
+    case India = 1, Brazil, China, Philippines, Turkey
+}
+
+/*class Country {
+ 
     private var countryId: Int
     private var name: String
     
@@ -33,4 +37,4 @@ class Country {
     func setName(_ name:String) {
         self.name = name
     }
-}
+}*/

@@ -10,9 +10,9 @@ import Foundation
 
 var college = College()
 
-var employees: [Employee] = []
-employees.append(Employee(1, "John", college.getFunctions()[1], "2016-02-01", ""))
-employees.append(Employee(1, "Mary", college.getFunctions()[2], "2016-02-01", ""))
+var emp1 = Employee()
+var emp2 = Employee()
+college.setEmployees([emp1, emp2])
 
 college.setEmployees(employees)
 

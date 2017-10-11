@@ -8,7 +8,11 @@
 
 import Foundation
 
-class Function {
+enum Function: Int {
+    case Staff = 1, Instructor, Head
+}
+
+/*class Function {
     
     private var functionId: Int
     private var description: String
@@ -34,4 +38,4 @@ class Function {
         self.description = description
     }
 
-}
+}*/

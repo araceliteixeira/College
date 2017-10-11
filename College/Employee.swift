@@ -19,16 +19,19 @@ class Employee {
     init(){
         employeeId = 0
         name = ""
-        mainFunction = Function()
+        mainFunction = Function.Staff
         startDate = NSDate()
         endDate = NSDate()
     }
     init(_ employeeId: Int, _ name: String, _ mainFunction: Function, _ startDate: String, _ endDate: String) {
         self.employeeId = employeeId
         self.name = name
-        self.mainFunction = Function()
+        self.mainFunction = mainFunction
         self.startDate = Util.convertStringToDate(startDate)
         self.endDate = Util.convertStringToDate(endDate)
+    }
+    convenience init(_ employeeId: Int, _ name: String, _ mainFunction: Int, _ startDate: String, _ endDate: String) {
+        self.init(employeeId, name, Function(rawValue: mainFunction)!, startDate, endDate)
     }
     
     func getEmployeeId() -> Int {

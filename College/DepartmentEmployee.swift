@@ -10,26 +10,17 @@ import Foundation
 
 class DepartmentEmployee {
     
-    private var departmentEmployeeId: Int
     private var department: Department
     private var employee: Employee
     
     init() {
-        departmentEmployeeId = 0
         department = Department()
         employee = Employee()
     }
     
-    init(_ departmentEmployeeId: Int, _ department: Department, _ employee: Employee) {
-        self.departmentEmployeeId = departmentEmployeeId
+    init(_ department: Department, _ employee: Employee) {
         self.department = department
         self.employee = employee
-    }
-    func getDepartmentEmployeeId() -> Int {
-        return departmentEmployeeId
-    }
-    func setDepartmentEmployeeId(_ departmentEmployeeId: Int) {
-        self.departmentEmployeeId = departmentEmployeeId
     }
     func getDepartment() -> Department {
         return department

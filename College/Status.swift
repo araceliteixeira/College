@@ -8,7 +8,11 @@
 
 import Foundation
 
-class Status {
+enum Status: Int {
+    case Active = 1, Inactive
+}
+
+/*class Status {
     
     private var statusId: Int
     private var description: String
@@ -34,4 +38,4 @@ class Status {
         self.description = description
     }
 
-}
+}*/
