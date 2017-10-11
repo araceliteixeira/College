@@ -23,6 +23,7 @@
 		9BAE84071F879F1D0056F087 /* Department.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAE84061F879F1D0056F087 /* Department.swift */; };
 		9BAE84091F87C5340056F087 /* College.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAE84081F87C5340056F087 /* College.swift */; };
 		9BAE840B1F87CF4F0056F087 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAE840A1F87CF4F0056F087 /* Util.swift */; };
+		9BC27AEA1F8E643B002AF84C /* CollegeReports.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC27AE91F8E643B002AF84C /* CollegeReports.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -55,6 +56,7 @@
 		9BAE84061F879F1D0056F087 /* Department.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Department.swift; sourceTree = "<group>"; };
 		9BAE84081F87C5340056F087 /* College.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = College.swift; sourceTree = "<group>"; };
 		9BAE840A1F87CF4F0056F087 /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
+		9BC27AE91F8E643B002AF84C /* CollegeReports.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollegeReports.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				9B2CD9BF1F87A172006EA78A /* Employee.swift */,
 				9BAE84081F87C5340056F087 /* College.swift */,
 				9BAE840A1F87CF4F0056F087 /* Util.swift */,
+				9BC27AE91F8E643B002AF84C /* CollegeReports.swift */,
 			);
 			path = College;
 			sourceTree = "<group>";
@@ -171,6 +174,7 @@
 				9BAE840B1F87CF4F0056F087 /* Util.swift in Sources */,
 				9B2CD9CC1F87A2DD006EA78A /* Classe.swift in Sources */,
 				9B2CD9D61F87A2DD006EA78A /* StudentClass.swift in Sources */,
+				9BC27AEA1F8E643B002AF84C /* CollegeReports.swift in Sources */,
 				9B2CD9D11F87A2DD006EA78A /* GradeAux.swift in Sources */,
 				9BAE84001F879EDC0056F087 /* main.swift in Sources */,
 				9B2CD9C01F87A172006EA78A /* Employee.swift in Sources */,
