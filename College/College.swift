@@ -9,9 +9,6 @@
 import Foundation
 
 class College {
-    /*var functions: [Function]
-    var status: [Status]
-    var countries: [Country]*/
     private var departments: [Department]
     private var employees: [Employee]
     private var departmentEmployees: [DepartmentEmployee]
@@ -23,16 +20,6 @@ class College {
     private var schedules: [Schedule]
     
     init() {
-        /*functions = [Function(1), getEmployee("Staff"),
-                     Function(2), getEmployee("Instructor"),
-                     Function(3, "Head")]
-        status = [Status(1), getEmployee("Active"),
-                  Status(2), getEmployee("Inactive")]
-        countries = [Country(1), getEmployee("India"),
-                     Country(2), getEmployee("Brazil"),
-                     Country(3, "China"),
-                     Country(4, "South Korea"),
-                     Country(5, "Turkey")]*/
         departments = []
         employees = []
         departmentEmployees = []
@@ -53,6 +40,7 @@ class College {
         createClasses()
         createStudents()
         createStudentClasses()
+        createSchedules()
     }
     
     func createEmployees() {
@@ -1529,7 +1517,6 @@ class College {
     
     func createAndInsertStudentClass(_ id: Int, _ classeId: Int, _ studentId: Int, _ gradeAssig: Int?, _ gradeTest: Int?, _ gradeProject: Int?) {
         studentClasses.append(StudentClass(id, getClasse(classeId), getStudent(studentId), gradeAssig, gradeTest, gradeProject))
-        
     }
     
     func createSchedules() {
@@ -2055,7 +2042,7 @@ class College {
         }
         return dept
     }
-                
+    
     func getProgram(_ id: Int) -> Program {
         var prog = Program()
         if let i = programs.index(where: { $0.getProgramId() == id }) {
@@ -2104,24 +2091,6 @@ class College {
         return schedule
     }
     
-    /*func getFunctions() -> [Function]{
-        return functions
-    }
-    func setFunctions(_ functions: [Function]) {
-        self.functions = functions
-    }
-    func getStatus() -> [Status]{
-        return status
-    }
-    func setStatus(_ status: [Status]) {
-        self.status = status
-    }
-    func getCountries() -> [Country] {
-        return countries
-    }
-    func setCountries(_ countries: [Country]) {
-        self.countries = countries
-    }*/
     func getDepartments() -> [Department] {
         return departments
     }
@@ -2139,5 +2108,41 @@ class College {
     }
     func setDepartmentEmployees(_ departmentEmployees: [DepartmentEmployee]) {
         self.departmentEmployees = departmentEmployees
+    }
+    func getPrograms() -> [Program] {
+        return programs
+    }
+    func setPrograms(_ programs: [Program]) {
+        self.programs = programs
+    }
+    func getCourses() -> [Course] {
+        return courses
+    }
+    func setCourse(_ courses: [Course]) {
+        self.courses = courses
+    }
+    func getClasses() -> [Classe] {
+        return classes
+    }
+    func setClasses(_ classes: [Classe]) {
+        self.classes = classes
+    }
+    func getStudents() -> [Student] {
+        return students
+    }
+    func setStudents(_ students: [Student]) {
+        self.students = students
+    }
+    func getStudentClasses() -> [StudentClass] {
+        return studentClasses
+    }
+    func setStudentClasses(_ studentClasses: [StudentClass]) {
+        self.studentClasses = studentClasses
+    }
+    func getSchedules() -> [Schedule] {
+        return schedules
+    }
+    func setSchedules(_ schedules: [Schedule]) {
+        self.schedules = schedules
     }
 }
