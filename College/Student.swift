@@ -20,19 +20,23 @@ class Student {
     init(){
         studentId = 0
         name = ""
-        originCountry = Country()
+        originCountry = Country.India
         startDate = NSDate()
         endDate = NSDate()
-        status = Status()
+        status = Status.Active
     }
     
     init(_ studentId: Int, _ name: String, _ originCountry: Country, _ startDate: String, _ endDate: String, _ status: Status) {
         self.studentId = studentId
         self.name = name
-        self.originCountry = Country()
+        self.originCountry = originCountry
         self.startDate = Util.convertStringToDate(startDate)
         self.endDate = Util.convertStringToDate(endDate)
-        self.status = Status()
+        self.status = status
+    }
+    
+    convenience init(_ studentId: Int, _ name: String, _ originCountry: Int, _ startDate: String, _ endDate: String, _ status: Int) {
+        self.init(studentId, name, Country(rawValue: originCountry)!, startDate, endDate, Status(rawValue: status)!)
     }
     
     func getStudentId() -> Int {
