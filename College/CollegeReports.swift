@@ -32,10 +32,13 @@ class CollegeReports {
     func instructorsByClasses() -> String {
         var report = ""
         for c in college.getClasses() {
-            let classId = c.getClasseId()
-            let course = c.getCourse().getName()
-            let average = getAverageGradeOfClasse(c)
-            report = "Class Id: \(classId) Course: \(course) Average: \(average)"
+            if getAverageGradeOfClasse(c) != 0 {
+                let instructor = c.getInstructor().getName()
+                let classId = c.getClasseId()
+                let course = c.getCourse().getName()
+                let average = getAverageGradeOfClasse(c)
+                report += "Instructor: \(instructor) Class Id: \(classId) Course: \(course) Average: \(average) \n"
+            }
         }
         return report
     }
@@ -146,8 +149,21 @@ class CollegeReports {
      GROUP BY e.employee_id, sd.weekday
      ORDER BY count(cl.class_id);
     */
-    func classesByInscructorsPerWeek() {
-        
+    func classesByInscructorsPerWeek() -> String  {
+        var report = ""
+        var count = 0
+        var weekday = ""
+        for c in college.getClasses() {
+            let instructor = c.getInstructor().getName()
+            for s in college.getSchedules() {
+                if (s.getClasse().getClasseId() == c.getClasseId()) {
+                    weekday = s.getWeekday()
+                }
+            }
+            count += 1
+            report += "Instructor: \(instructor) Weekday: \(weekday) Number of classes: \(count) \n"
+        }
+        return report
     }
     
     /*
@@ -168,8 +184,32 @@ class CollegeReports {
      ) t
      GROUP BY t.Program;
     */
-    func studentsByBestAverage() {
-        
+    func studentsByBestAverage() -> String {
+        var report = ""
+        for p in college.getPrograms() {
+            let program = p.getName()
+            let bestAverage = getAverageGradeByProgram(p)
+            report += "Program: \(program) \(bestAverage)\n"
+        }
+        return report
+    }
+    
+    func getAverageGradeByProgram(_ program: Program) -> String {
+        var sumOfGrades = 0
+        var student = ""
+        var bestGrade = 0
+        for sc in college.getStudentClasses() {
+            if sc.getClasse().getCourse().getProgram().getProgramId() == program.getProgramId() {
+                if sc.getGradeAssig() != nil && sc.getGradeTest() != nil && sc.getGradeProject() != nil {
+                    sumOfGrades = (sc.getGradeAssig()! + sc.getGradeTest()! + sc.getGradeProject()!) / 3
+                }
+            }
+            if (bestGrade < sumOfGrades) {
+                bestGrade = sumOfGrades
+                student = sc.getStudent().getName()
+            }
+        }
+        return "Student: \(student) Best Average Grade: \(bestGrade)"
     }
 
 }
