@@ -25,8 +25,8 @@ class StudentClass {
     
     init(_ studentClassId: Int, _ classe: Classe, _ student: Student, _ gradeAssig: Int?, _ gradeTest: Int?, _ gradeProject: Int?) {
         self.studentClassId = studentClassId
-        self.classe = Classe()
-        self.student = Student()
+        self.classe = classe
+        self.student = student
         self.gradeAssig = gradeAssig
         self.gradeTest = gradeTest
         self.gradeProject = gradeProject

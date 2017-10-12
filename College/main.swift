@@ -12,7 +12,8 @@ var reports = CollegeReports()
 
 print("Number of students by country")
 print(reports.studentsByCountry())
-
-
+print("")
+print("Top 3 courses with worst average grades")
+print(reports.coursesByWorstAverage())
 
 

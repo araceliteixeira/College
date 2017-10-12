@@ -75,8 +75,17 @@ class CollegeReports {
      ORDER BY Grade ASC
      LIMIT 3;
     */
-    func coursesByWorstAverage() {
+    func coursesByWorstAverage() -> String {
+        var coursesGrade: [(Course, Int)] = []
         
+        for c in college.getCourses() {
+            coursesGrade.append((c, getAverageGradeOfCourse(c)))
+        }
+        coursesGrade = coursesGrade.sorted(by: {$0.1 > $1.1})
+        var report = "\(coursesGrade[0].0.getName()): \(coursesGrade[0].1)\n"
+        report += "\(coursesGrade[1].0.getName()): \(coursesGrade[1].1)\n"
+        report += "\(coursesGrade[2].0.getName()): \(coursesGrade[2].1)\n"
+        return report
     }
     
     func getAverageGradeOfCourse(_ course: Course) -> Int {
@@ -88,7 +97,7 @@ class CollegeReports {
                 numberOfGrades += 1
             }
         }
-        return sumOfGrades / numberOfGrades
+        return sumOfGrades / (numberOfGrades != 0 ? numberOfGrades : 1)
     }
     
     func getAverageGradeOfClasse(_ classe: Classe) -> Int {
@@ -96,12 +105,13 @@ class CollegeReports {
         var numberOfGrades = 0
         for sc in college.getStudentClasses() {
             if sc.getClasse().getClasseId() == classe.getClasseId() {
-                sumOfGrades += (sc.getGradeAssig()! + sc.getGradeTest()! + sc.getGradeProject()!) / 3
-                numberOfGrades += 1
-                
+                if sc.getGradeAssig() != nil && sc.getGradeTest() != nil && sc.getGradeProject() != nil {
+                    sumOfGrades += (sc.getGradeAssig()! + sc.getGradeTest()! + sc.getGradeProject()!) / 3
+                    numberOfGrades += 1
+                }
             }
         }
-        return sumOfGrades / numberOfGrades
+        return sumOfGrades / (numberOfGrades != 0 ? numberOfGrades : 1)
     }
     
     func getClassesOfCourse(_ course: Course) -> [Classe] {
