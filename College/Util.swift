@@ -24,4 +24,15 @@ class Util {
         dateFormatter.dateFormat = dateFormat
         return dateFormatter.string(from:date as Date)
     }
+    
+    static func pad(_ string: String, _ size: Int) -> String {
+        var string = string
+        let pad = size - string.characters.count
+        if pad > 0 {
+            for _ in 0...(size - string.characters.count) {
+                string += " "
+            }
+        }
+        return string
+    }
 }

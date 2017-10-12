@@ -65,7 +65,7 @@ class CollegeReports {
                     count += 1
                 }
             }
-            report += "\(c): \(count) students\n"
+            report += Util.pad(String(describing: c), 15) + "| \(count) students\n"
         }
         return report
     }
@@ -89,9 +89,9 @@ class CollegeReports {
             coursesGrade.append((c, getAverageGradeOfCourse(c)))
         }
         coursesGrade = coursesGrade.sorted(by: {$0.1 > $1.1})
-        var report = "\(coursesGrade[0].0.getName()): \(coursesGrade[0].1)\n"
-        report += "\(coursesGrade[1].0.getName()): \(coursesGrade[1].1)\n"
-        report += "\(coursesGrade[2].0.getName()): \(coursesGrade[2].1)\n"
+        var report = Util.pad(coursesGrade[0].0.getName(), 30) + "| \(coursesGrade[0].1)\n"
+        report += Util.pad(coursesGrade[1].0.getName(), 30) + "| \(coursesGrade[1].1)\n"
+        report += Util.pad(coursesGrade[2].0.getName(), 30) + "| \(coursesGrade[2].1)\n"
         return report
     }
     
@@ -100,8 +100,10 @@ class CollegeReports {
         var numberOfGrades = 0
         for co in college.getCourses() {
             for cl in getClassesOfCourse(co) {
-                sumOfGrades += getAverageGradeOfClasse(cl)
-                numberOfGrades += 1
+                if getAverageGradeOfClasse(cl) != 0 {
+                    sumOfGrades += getAverageGradeOfClasse(cl)
+                    numberOfGrades += 1
+                }
             }
         }
         return sumOfGrades / (numberOfGrades != 0 ? numberOfGrades : 1)
