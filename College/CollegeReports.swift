@@ -29,8 +29,15 @@ class CollegeReports {
      WHERE sc.grade_project is not null
      GROUP BY e.employee_id, cl.class_id, co.name;
     */
-    func instructorsByClasses() {
-        
+    func instructorsByClasses() -> String {
+        var report = ""
+        for c in college.getClasses() {
+            let classId = c.getClasseId()
+            let course = c.getCourse().getName()
+            let average = getAverageGradeOfClasse(c)
+            report = "Class Id: \(classId) Course: \(course) Average: \(average)"
+        }
+        return report
     }
     
     /*

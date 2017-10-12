@@ -10,8 +10,11 @@ import Foundation
 
 var reports = CollegeReports()
 
-print("Number of students by country")
-print(reports.studentsByCountry())
+//print("Number of students by country")
+//print(reports.studentsByCountry())
+
+print("Instructors by classes and average student grades")
+print(reports.instructorsByClasses())
 
 
 
