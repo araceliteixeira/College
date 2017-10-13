@@ -71,7 +71,7 @@ class CollegeReports {
 
     */
     func studentsByCountry() -> String {
-        var report = Util.pad("Country", 15) + "| Students\n"
+        var report = Util.pad("Country", 15) + "| Number of Students\n"
         var countries: [Country] = []
         for s in college.getStudents() {
             if !countries.contains(s.getOriginCountry()) {
