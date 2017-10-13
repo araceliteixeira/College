@@ -183,34 +183,42 @@ class CollegeReports {
      ORDER BY Grade DESC
      ) t
      GROUP BY t.Program;
-     report += Util.pad(String(describing: c), 15) + "| \(count) students\n"
     */
     func studentsByBestAverage() -> String {
-        var report = Util.pad("Program",20) + " | " + Util.pad("Student",20) + " | Best Average Grade\n"
+        var report = Util.pad("Program", 20) + "| " + Util.pad("Student", 20) + "| Best Average Grade\n"
         for p in college.getPrograms() {
-            let program = p.getName()
-            let bestAverage = getAverageGradeByProgram(p)
-            report += Util.pad(program,20) + " | \(bestAverage)\n"
+            var elements = getAverageGradeOfEachSudentInProgram(p).sorted(by: {$0.1 > $1.1})
+            report += Util.pad(p.getName(), 20) + "| " + Util.pad(elements[0].0.getName(), 20) + "| \(elements[0].1)\n"
         }
         return report
     }
-    
-    func getAverageGradeByProgram(_ program: Program) -> String {
-        var sumOfGrades = 0
-        var student = ""
-        var bestGrade = 0
-        for sc in college.getStudentClasses() {
-            if sc.getClasse().getCourse().getProgram().getProgramId() == program.getProgramId() {
-                if sc.getGradeAssig() != nil && sc.getGradeTest() != nil && sc.getGradeProject() != nil {
-                    sumOfGrades = (sc.getGradeAssig()! + sc.getGradeTest()! + sc.getGradeProject()!) / 3
+
+    func getAverageGradeOfEachSudentInProgram(_ program: Program) -> [(Student, Int)] {
+        var elements: [(Student, Int)] = []
+        for s in college.getStudents() {
+            var student: Student?
+            var sum = 0
+            var count = 0
+            for sc in college.getStudentClasses() {
+                if sc.getClasse().getCourse().getProgram().getProgramId() == program.getProgramId()
+                    && sc.getStudent().getStudentId() == s.getStudentId() {
+                    student = s
+                    if sc.getGradeAssig() != nil && sc.getGradeTest() != nil && sc.getGradeProject() != nil {
+                        sum += (sc.getGradeAssig()! + sc.getGradeTest()! + sc.getGradeProject()!) / 3
+                        count += 1
+                    }
+                    
                 }
             }
-            if (bestGrade < sumOfGrades) {
-                bestGrade = sumOfGrades
-                student = sc.getStudent().getName()
+            if student != nil {
+                var element = (student!, 0)
+                if count != 0 {
+                    element.1 = sum / count
+                }
+                elements.append(element)
             }
         }
-        return Util.pad(student,20) + " | \(bestGrade)"
+        return elements
     }
 
 }
