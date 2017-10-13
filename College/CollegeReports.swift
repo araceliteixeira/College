@@ -54,7 +54,7 @@ class CollegeReports {
 
     */
     func studentsByCountry() -> String {
-        var report = ""
+        var report = Util.pad("Country", 15) + "| Students\n"
         var countries: [Country] = []
         for s in college.getStudents() {
             if !countries.contains(s.getOriginCountry()) {
@@ -68,7 +68,7 @@ class CollegeReports {
                     count += 1
                 }
             }
-            report += Util.pad(String(describing: c), 15) + "| \(count) students\n"
+            report += Util.pad(String(describing: c), 15) + "| \(count)\n"
         }
         return report
     }
@@ -92,7 +92,8 @@ class CollegeReports {
             coursesGrade.append((c, getAverageGradeOfCourse(c)))
         }
         coursesGrade = coursesGrade.sorted(by: {$0.1 > $1.1})
-        var report = Util.pad(coursesGrade[0].0.getName(), 30) + "| \(coursesGrade[0].1)\n"
+        var report = Util.pad("Course", 30) + "| Grade\n"
+        report += Util.pad(coursesGrade[0].0.getName(), 30) + "| \(coursesGrade[0].1)\n"
         report += Util.pad(coursesGrade[1].0.getName(), 30) + "| \(coursesGrade[1].1)\n"
         report += Util.pad(coursesGrade[2].0.getName(), 30) + "| \(coursesGrade[2].1)\n"
         return report
@@ -151,7 +152,7 @@ class CollegeReports {
     */
     func classesByInscructorsPerWeek() -> String  {
         var report = Util.pad("Instructor", 18) + " | " + Util.pad("Weekday",12) + " | Number of classes\n"
-        var count = 0
+        /*var count = 0
         var weekday = ""
         for c in college.getClasses() {
             let instructor = c.getInstructor().getName()
@@ -161,9 +162,32 @@ class CollegeReports {
                 }
             }
             count += 1
-            report += Util.pad(instructor, 18) + " | " + Util.pad(weekday, 12) + " |  \(count)\n"
+            //
+        }*/
+        
+        for i in college.getEmployees() {
+            for e in schedulesPerInstructor(i) {
+                report += Util.pad(i.getName(), 18) + " | " + Util.pad(e.0, 12) + " |  \(e.1)\n"
+            }
         }
+        
         return report
+    }
+    
+    func schedulesPerInstructor(_ instructor: Employee) -> [(String, Int)] {
+        var elements: [(String, Int)] = []
+        for s in college.getSchedules() {
+            if s.getClasse().getInstructor().getEmployeeId() == instructor.getEmployeeId() {
+                var count = 1
+                if let index = elements.index(where: {$0.0 == s.getWeekday()}) {
+                    let e = elements.remove(at: index)
+                    count += e.1
+                }
+                elements.append((s.getWeekday(), count))
+                
+            }
+        }
+        return elements
     }
     
     /*
