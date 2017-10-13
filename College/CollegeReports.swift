@@ -30,17 +30,34 @@ class CollegeReports {
      GROUP BY e.employee_id, cl.class_id, co.name;
     */
     func instructorsByClasses() -> String {
-        var report = Util.pad("Instructor", 18) + " | " + Util.pad("Class Id",10) + " | " + Util.pad("Course",39) + " | Average Grade\n"
+        var report = Util.pad("Instructor", 18) + " | " + Util.pad("Class Id",10) + " | " + Util.pad("Course", 40) + " | Average Grade\n"
         for c in college.getClasses() {
             if getAverageGradeOfClasse(c) != 0 {
                 let instructor = c.getInstructor().getName()
                 let classId = c.getClasseId()
                 let course = c.getCourse().getName()
                 let average = getAverageGradeOfClasse(c)
-                report += Util.pad(instructor, 18) + " | " + Util.pad(classId, 10) + " | " + Util.pad(course,39) + " | \(average) \n"
+                report += Util.pad(instructor, 18) + " | " + Util.pad(classId, 10) + " | " + Util.pad(course, 40) + " | \(average) \n"
             }
         }
         return report
+    }
+    
+    func getAverageGradeOfClasse(_ classe: Classe) -> Int {
+        var sum = 0
+        var count = 0
+        for sc in college.getStudentClasses() {
+            if sc.getClasse().getClasseId() == classe.getClasseId() {
+                if sc.getGradeAssig() != nil && sc.getGradeTest() != nil && sc.getGradeProject() != nil {
+                    sum += (sc.getGradeAssig()! + sc.getGradeTest()! + sc.getGradeProject()!) / 3
+                    count += 1
+                }
+            }
+        }
+        if count == 0 {
+            return 0
+        }
+        return sum / count
     }
     
     /*
@@ -86,55 +103,33 @@ class CollegeReports {
      LIMIT 3;
     */
     func coursesByWorstAverage() -> String {
-        var coursesGrade: [(Course, Int)] = []
-        
+        var report = Util.pad("Course", 40) + "| Grade\n"
+        var elements: [(Course, Int)] = []
         for c in college.getCourses() {
-            coursesGrade.append((c, getAverageGradeOfCourse(c)))
+            elements.append((c, getAverageGradeOfClassesInCourse(c)))
         }
-        coursesGrade = coursesGrade.sorted(by: {$0.1 > $1.1})
-        var report = Util.pad("Course", 30) + "| Grade\n"
-        report += Util.pad(coursesGrade[0].0.getName(), 30) + "| \(coursesGrade[0].1)\n"
-        report += Util.pad(coursesGrade[1].0.getName(), 30) + "| \(coursesGrade[1].1)\n"
-        report += Util.pad(coursesGrade[2].0.getName(), 30) + "| \(coursesGrade[2].1)\n"
+        elements = elements.sorted(by: {$0.1 < $1.1})
+        report += Util.pad(elements[0].0.getName(), 40) + "| \(elements[0].1)\n"
+        report += Util.pad(elements[1].0.getName(), 40) + "| \(elements[1].1)\n"
+        report += Util.pad(elements[2].0.getName(), 40) + "| \(elements[2].1)\n"
         return report
     }
     
-    func getAverageGradeOfCourse(_ course: Course) -> Int {
-        var sumOfGrades = 0
-        var numberOfGrades = 0
-        for co in college.getCourses() {
-            for cl in getClassesOfCourse(co) {
-                if getAverageGradeOfClasse(cl) != 0 {
-                    sumOfGrades += getAverageGradeOfClasse(cl)
-                    numberOfGrades += 1
-                }
-            }
-        }
-        return sumOfGrades / (numberOfGrades != 0 ? numberOfGrades : 1)
-    }
-    
-    func getAverageGradeOfClasse(_ classe: Classe) -> Int {
-        var sumOfGrades = 0
-        var numberOfGrades = 0
+    func getAverageGradeOfClassesInCourse(_ course: Course) -> Int {
+        var sum = 0
+        var count = 0
         for sc in college.getStudentClasses() {
-            if sc.getClasse().getClasseId() == classe.getClasseId() {
+            if sc.getClasse().getCourse().getCourseId() == course.getCourseId() {
                 if sc.getGradeAssig() != nil && sc.getGradeTest() != nil && sc.getGradeProject() != nil {
-                    sumOfGrades += (sc.getGradeAssig()! + sc.getGradeTest()! + sc.getGradeProject()!) / 3
-                    numberOfGrades += 1
+                    sum += (sc.getGradeAssig()! + sc.getGradeTest()! + sc.getGradeProject()!) / 3
+                    count += 1
                 }
             }
         }
-        return sumOfGrades / (numberOfGrades != 0 ? numberOfGrades : 1)
-    }
-    
-    func getClassesOfCourse(_ course: Course) -> [Classe] {
-        var classes: [Classe] = []
-        for c in college.getClasses() {
-            if c.getCourse().getCourseId() == course.getCourseId() {
-                classes.append(c)
-            }
+        if count == 0 {
+            return 0
         }
-        return classes
+        return sum / count
     }
     
     /*
@@ -152,25 +147,11 @@ class CollegeReports {
     */
     func classesByInscructorsPerWeek() -> String  {
         var report = Util.pad("Instructor", 18) + " | " + Util.pad("Weekday",12) + " | Number of classes\n"
-        /*var count = 0
-        var weekday = ""
-        for c in college.getClasses() {
-            let instructor = c.getInstructor().getName()
-            for s in college.getSchedules() {
-                if (s.getClasse().getClasseId() == c.getClasseId()) {
-                    weekday = s.getWeekday()
-                }
-            }
-            count += 1
-            //
-        }*/
-        
         for i in college.getEmployees() {
             for e in schedulesPerInstructor(i) {
                 report += Util.pad(i.getName(), 18) + " | " + Util.pad(e.0, 12) + " |  \(e.1)\n"
             }
         }
-        
         return report
     }
     
