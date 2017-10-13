@@ -30,14 +30,14 @@ class CollegeReports {
      GROUP BY e.employee_id, cl.class_id, co.name;
     */
     func instructorsByClasses() -> String {
-        var report = ""
+        var report = Util.pad("Instructor", 18) + " | " + Util.pad("Class Id",10) + " | " + Util.pad("Course",39) + " | Average Grade\n"
         for c in college.getClasses() {
             if getAverageGradeOfClasse(c) != 0 {
                 let instructor = c.getInstructor().getName()
                 let classId = c.getClasseId()
                 let course = c.getCourse().getName()
                 let average = getAverageGradeOfClasse(c)
-                report += "Instructor: \(instructor) Class Id: \(classId) Course: \(course) Average: \(average) \n"
+                report += Util.pad(instructor, 18) + " | " + Util.pad(classId, 10) + " | " + Util.pad(course,39) + " | \(average) \n"
             }
         }
         return report
@@ -150,7 +150,7 @@ class CollegeReports {
      ORDER BY count(cl.class_id);
     */
     func classesByInscructorsPerWeek() -> String  {
-        var report = ""
+        var report = Util.pad("Instructor", 18) + " | " + Util.pad("Weekday",12) + " | Number of classes\n"
         var count = 0
         var weekday = ""
         for c in college.getClasses() {
@@ -161,7 +161,7 @@ class CollegeReports {
                 }
             }
             count += 1
-            report += "Instructor: \(instructor) Weekday: \(weekday) Number of classes: \(count) \n"
+            report += Util.pad(instructor, 18) + " | " + Util.pad(weekday, 12) + " |  \(count)\n"
         }
         return report
     }
@@ -183,13 +183,14 @@ class CollegeReports {
      ORDER BY Grade DESC
      ) t
      GROUP BY t.Program;
+     report += Util.pad(String(describing: c), 15) + "| \(count) students\n"
     */
     func studentsByBestAverage() -> String {
-        var report = ""
+        var report = Util.pad("Program",20) + " | " + Util.pad("Student",20) + " | Best Average Grade\n"
         for p in college.getPrograms() {
             let program = p.getName()
             let bestAverage = getAverageGradeByProgram(p)
-            report += "Program: \(program) \(bestAverage)\n"
+            report += Util.pad(program,20) + " | \(bestAverage)\n"
         }
         return report
     }
@@ -209,7 +210,7 @@ class CollegeReports {
                 student = sc.getStudent().getName()
             }
         }
-        return "Student: \(student) Best Average Grade: \(bestGrade)"
+        return Util.pad(student,20) + " | \(bestGrade)"
     }
 
 }
