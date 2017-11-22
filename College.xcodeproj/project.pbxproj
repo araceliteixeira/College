@@ -19,6 +19,7 @@
 		9B2CD9D41F87A2DD006EA78A /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2CD9C91F87A2DD006EA78A /* Status.swift */; };
 		9B2CD9D51F87A2DD006EA78A /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2CD9CA1F87A2DD006EA78A /* Student.swift */; };
 		9B2CD9D61F87A2DD006EA78A /* StudentClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2CD9CB1F87A2DD006EA78A /* StudentClass.swift */; };
+		9B589DA41FC61C4E00E7C607 /* FileWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B589DA31FC61C4E00E7C607 /* FileWriter.swift */; };
 		9BAE84001F879EDC0056F087 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAE83FF1F879EDC0056F087 /* main.swift */; };
 		9BAE84071F879F1D0056F087 /* Department.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAE84061F879F1D0056F087 /* Department.swift */; };
 		9BAE84091F87C5340056F087 /* College.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAE84081F87C5340056F087 /* College.swift */; };
@@ -51,6 +52,7 @@
 		9B2CD9C91F87A2DD006EA78A /* Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		9B2CD9CA1F87A2DD006EA78A /* Student.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
 		9B2CD9CB1F87A2DD006EA78A /* StudentClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentClass.swift; sourceTree = "<group>"; };
+		9B589DA31FC61C4E00E7C607 /* FileWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileWriter.swift; sourceTree = "<group>"; };
 		9BAE83FC1F879EDC0056F087 /* College */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = College; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BAE83FF1F879EDC0056F087 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		9BAE84061F879F1D0056F087 /* Department.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Department.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				9BAE84081F87C5340056F087 /* College.swift */,
 				9BAE840A1F87CF4F0056F087 /* Util.swift */,
 				9BC27AE91F8E643B002AF84C /* CollegeReports.swift */,
+				9B589DA31FC61C4E00E7C607 /* FileWriter.swift */,
 			);
 			path = College;
 			sourceTree = "<group>";
@@ -174,6 +177,7 @@
 				9BAE840B1F87CF4F0056F087 /* Util.swift in Sources */,
 				9B2CD9CC1F87A2DD006EA78A /* Classe.swift in Sources */,
 				9B2CD9D61F87A2DD006EA78A /* StudentClass.swift in Sources */,
+				9B589DA41FC61C4E00E7C607 /* FileWriter.swift in Sources */,
 				9BC27AEA1F8E643B002AF84C /* CollegeReports.swift in Sources */,
 				9B2CD9D11F87A2DD006EA78A /* GradeAux.swift in Sources */,
 				9BAE84001F879EDC0056F087 /* main.swift in Sources */,
