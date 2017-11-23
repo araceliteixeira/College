@@ -9,7 +9,7 @@
 import Foundation
 
 class CollegeReports {
-    private var college: College
+    public var college: College
     
     init() {
         college = College()
