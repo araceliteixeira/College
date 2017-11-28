@@ -161,78 +161,110 @@ extension GradeAux {
     }
 }
 extension College {
-    func toJson() -> String {
+    func createJsonFiles() {
+        FileWriter.writeIntoFile(createEmployeeJson(), "employee.json")
+        FileWriter.writeIntoFile(createDepartmentJson(), "department.json")
+        FileWriter.writeIntoFile(createDepartmentEmployeeJson(), "departmentEmployee.json")
+        FileWriter.writeIntoFile(createProgramJson(), "program.json")
+        FileWriter.writeIntoFile(createCourseJson(), "course.json")
+        FileWriter.writeIntoFile(createClasseJson(), "classe.json")
+        FileWriter.writeIntoFile(createStudentJson(), "student.json")
+        FileWriter.writeIntoFile(createStudentClassJson(), "studentClass.json")
+        FileWriter.writeIntoFile(createScheduleJson(), "schedule.json")
+        FileWriter.writeIntoFile(createFunctionJson(), "function.json")
+        FileWriter.writeIntoFile(createCountryJson(), "country.json")
+        FileWriter.writeIntoFile(createStatusJson(), "status.json")
+        FileWriter.writeIntoFile(createGradeAuxJson(), "gradeAux.json")
+    }
+    
+    func createEmployeeJson() -> String {
         var json = "employee: [\n"
         for e in getEmployees() {
             json += "{\n" + e.toJson() + "},\n"
         }
-        json = String(json.dropLast(2)) + "]\n"
-        
-        json += "department: [\n"
+        return String(json.dropLast(2)) + "]\n"
+    }
+    
+    func createDepartmentJson() -> String {
+        var json = "department: [\n"
         for d in getDepartments() {
             json += "{\n" + d.toJson() + "},\n"
         }
-        json = String(json.dropLast(2)) + "]\n"
-        
-        json += "departmentEmployee: [\n"
+        return String(json.dropLast(2)) + "]\n"
+    }
+    
+    func createDepartmentEmployeeJson() -> String {
+        var json = "departmentEmployee: [\n"
         for de in getDepartmentEmployees() {
             json += "{\n" + de.toJson() + "},\n"
         }
-        json = String(json.dropLast(2)) + "]\n"
-        
-        json += "program: [\n"
+        return String(json.dropLast(2)) + "]\n"
+    }
+    
+    func createProgramJson() -> String {
+        var json = "program: [\n"
         for p in getPrograms() {
             json += "{\n" + p.toJson() + "},\n"
         }
-        json = String(json.dropLast(2)) + "]\n"
-        
-        json += "course: [\n"
+        return String(json.dropLast(2)) + "]\n"
+    }
+    
+    func createCourseJson() -> String {
+        var json = "course: [\n"
         for c in getCourses() {
             json += "{\n" + c.toJson() + "},\n"
         }
-        json = String(json.dropLast(2)) + "]\n"
-        
-        json += "classe: [\n"
+        return String(json.dropLast(2)) + "]\n"
+    }
+    
+    func createClasseJson() -> String {
+        var json = "classe: [\n"
         for c in getClasses() {
             json += "{\n" + c.toJson() + "},\n"
         }
-        json = String(json.dropLast(2)) + "]\n"
-        
-        json += "student: [\n"
-        for s in getStudents() {
-            json += "{\n" + s.toJson() + "},\n"
-        }
-        json = String(json.dropLast(2)) + "]\n"
-        
-        json += "studentClass: [\n"
-        for sc in getStudentClasses() {
-            json += "{\n" + sc.toJson() + "},\n"
-        }
-        json = String(json.dropLast(2)) + "]\n"
-        
-        json += "schedule: [\n"
-        for s in getSchedules() {
-            json += "{\n" + s.toJson() + "},\n"
-        }
-        json = String(json.dropLast(2)) + "]\n"
-        
-        json += Function.toJson()
-        json += Country.toJson()
-        json += Status.toJson()
-        
-        json += "gradeAux: [\n"
-        for g in Grade.grades {
-            json += "{\n" + g.toJson() + "},\n"
-        }
-        json = String(json.dropLast(2)) + "]\n"
-        
-        return json
+        return String(json.dropLast(2)) + "]\n"
     }
     
     func createStudentJson() -> String {
         var json = "student: [\n"
         for s in getStudents() {
             json += "{\n" + s.toJson() + "},\n"
+        }
+        return String(json.dropLast(2)) + "]\n"
+    }
+    
+    func createStudentClassJson() -> String {
+        var json = "studentClass: [\n"
+        for sc in getStudentClasses() {
+            json += "{\n" + sc.toJson() + "},\n"
+        }
+        return String(json.dropLast(2)) + "]\n"
+    }
+    
+    func createScheduleJson() -> String {
+        var json = "schedule: [\n"
+        for s in getSchedules() {
+            json += "{\n" + s.toJson() + "},\n"
+        }
+        return String(json.dropLast(2)) + "]\n"
+    }
+    
+    func createFunctionJson() -> String {
+        return "{\n" + Function.toJson() + "}\n"
+    }
+    
+    func createCountryJson() -> String {
+        return "{\n" + Country.toJson() + "}\n"
+    }
+    
+    func createStatusJson() -> String {
+        return "{\n" + Status.toJson() + "}\n"
+    }
+    
+    func createGradeAuxJson() -> String {
+        var json = "gradeAux: [\n"
+        for g in Grade.grades {
+            json += "{\n" + g.toJson() + "},\n"
         }
         return String(json.dropLast(2)) + "]\n"
     }
