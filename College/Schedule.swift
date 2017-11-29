@@ -34,8 +34,8 @@ class Schedule {
         self.weekday = weekday
         self.startHour = startHour
         self.endHour = endHour
-        self.startDate = Util.convertStringToDate(startDate)
-        self.endDate = Util.convertStringToDate(endDate)
+        self.startDate = Util.convertStringToDate(startDate)!
+        self.endDate = Util.convertStringToDate(endDate)!
     }
     
     func getScheduleId() -> Int {
@@ -72,13 +72,13 @@ class Schedule {
         return Util.convertDateToString(startDate)
     }
     func setStartDate(_ startDate: String) {
-        self.startDate = Util.convertStringToDate(startDate)
+        self.startDate = Util.convertStringToDate(startDate)!
     }
     func getEndDate() -> String {
         return Util.convertDateToString(endDate)
     }
     func setEndDate(_ endDate: String) {
-        self.endDate = Util.convertStringToDate(endDate)
+        self.endDate = Util.convertStringToDate(endDate)!
     }
     
 }

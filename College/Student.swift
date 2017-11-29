@@ -30,8 +30,8 @@ class Student {
         self.studentId = studentId
         self.name = name
         self.originCountry = originCountry
-        self.startDate = Util.convertStringToDate(startDate)
-        self.endDate = Util.convertStringToDate(endDate)
+        self.startDate = Util.convertStringToDate(startDate)!
+        self.endDate = Util.convertStringToDate(endDate)!
         self.status = status
     }
     
@@ -68,10 +68,10 @@ class Student {
         self.originCountry = originCountry
     }
     func setStartDate(_ startDate: String) {
-        self.startDate = Util.convertStringToDate(startDate)
+        self.startDate = Util.convertStringToDate(startDate)!
     }
     func setEndDate(_ endDate: String) {
-        self.endDate = Util.convertStringToDate(endDate)
+        self.endDate = Util.convertStringToDate(endDate)!
     }
     func setStatus(_ status:Status) {
         self.status = status

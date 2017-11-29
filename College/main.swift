@@ -30,4 +30,4 @@ print("Top student with best average grade by program")
 print(reports.studentsByBestAverage())
 print("")
 
-//reports.college.createJsonFiles()
+reports.college.createJsonFiles()

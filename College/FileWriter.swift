@@ -42,87 +42,91 @@ class FileWriter {
 
 extension Employee {
     func toJson() -> String {
-        var json = "\"employeeId\":\(getEmployeeId()),\n"
+        var json = "{\"employeeId\":\(getEmployeeId()),\n"
         json += "\"name\":\"\(getName())\",\n"
         json += "\"mainFunction\":\"\(getMainFunction())\",\n"
         json += "\"startDate\":\"\(getStartDate())\",\n"
-        json += "\"endDate\":\"\(getEndDate())\"\n"
+        if getEndDate().isEmpty {
+            json += "\"endDate\":null}\n"
+        } else {
+            json += "\"endDate\":\"\(getEndDate())\"}\n"
+        }
         return json
     }
 }
 extension Department {
     func toJson() -> String {
-        var json = "\"departmentId\":\(getDepartmentId()),\n"
+        var json = "{\"departmentId\":\(getDepartmentId()),\n"
         json += "\"name\":\"\(getName())\",\n"
-        json += "\"head\":\(getHead().getEmployeeId())\n"
+        json += "\"head\":\n\(getHead().toJson())}\n"
         return json
     }
 }
 extension DepartmentEmployee {
     func toJson() -> String {
-        var json = "\"departmentId\":\(getDepartment().getDepartmentId()),\n"
-        json += "\"employeeId\":\(getEmployee().getEmployeeId())\n"
+        var json = "{\"department\":\n\(getDepartment().toJson()),\n"
+        json += "\"employee\":\n\(getEmployee().toJson())}\n"
         return json
     }
 }
 extension Program {
     func toJson() -> String {
-        var json = "\"programId\":\(getProgramId()),\n"
+        var json = "{\"programId\":\(getProgramId()),\n"
         json += "\"name\":\"\(getName())\",\n"
-        json += "\"head\":\(getHead().getEmployeeId()),\n"
-        json += "\"departmentId\":\(getdepartment().getDepartmentId())\n"
+        json += "\"head\":\n\(getHead().toJson()),\n"
+        json += "\"department\":\n\(getdepartment().toJson())}\n"
         return json
     }
 }
 extension Course {
     func toJson() -> String {
-        var json = "\"courseId\":\(getCourseId()),\n"
+        var json = "{\"courseId\":\(getCourseId()),\n"
         json += "\"name\":\"\(getName())\",\n"
-        json += "\"head\":\(getHead().getEmployeeId()),\n"
-        json += "\"programId\":\(getProgram().getProgramId()),\n"
-        json += "\"creditHour\":\(getCreditHour())\n"
+        json += "\"head\":\n\(getHead().toJson()),\n"
+        json += "\"program\":\n\(getProgram().toJson()),\n"
+        json += "\"creditHour\":\(getCreditHour())}\n"
         return json
     }
 }
 extension Classe {
     func toJson() -> String {
-        var json = "\"classeId\":\(getClasseId()),\n"
-        json += "\"courseId\":\(getCourse().getCourseId()),\n"
-        json += "\"head\":\(getInstructor().getEmployeeId())\n"
+        var json = "{\"classeId\":\(getClasseId()),\n"
+        json += "\"course\":\n\(getCourse().toJson()),\n"
+        json += "\"instructor\":\n\(getInstructor().toJson())}\n"
         return json
     }
 }
 extension Student {
     func toJson() -> String {
-        var json = "\"studentId\":\(getStudentId()),\n"
+        var json = "{\"studentId\":\(getStudentId()),\n"
         json += "\"name\":\"\(getName())\",\n"
         json += "\"originCountry\":\"\(getOriginCountry())\",\n"
         json += "\"startDate\":\"\(getStartDate())\",\n"
         json += "\"endDate\":\"\(getEndDate())\",\n"
-        json += "\"status\":\"\(getStatus())\"\n"
+        json += "\"status\":\"\(getStatus())\"}\n"
         return json
     }
 }
 extension StudentClass {
     func toJson() -> String {
-        var json = "\"studentClassId\":\(getStudentClassId()),\n"
-        json += "\"classId\":\(getClasse().getClasseId()),\n"
-        json += "\"studentId\":\(getStudent().getStudentId()),\n"
+        var json = "{\"studentClassId\":\(getStudentClassId()),\n"
+        json += "\"classe\":\n\(getClasse().toJson()),\n"
+        json += "\"student\":\n\(getStudent().toJson()),\n"
         json += "\"gradeAssig\":\(getGradeAssig() ?? -1),\n"
         json += "\"gradeTest\":\(getGradeTest() ?? -1),\n"
-        json += "\"gradeProject\":\(getGradeProject() ?? -1)\n"
+        json += "\"gradeProject\":\(getGradeProject() ?? -1)}\n"
         return json
     }
 }
 extension Schedule {
     func toJson() -> String {
-        var json = "\"scheduleId\":\(getScheduleId()),\n"
-        json += "\"classId\":\(getClasse().getClasseId()),\n"
+        var json = "{\"scheduleId\":\(getScheduleId()),\n"
+        json += "\"class\":\n\(getClasse().toJson()),\n"
         json += "\"weekday\":\"\(getWeekday())\",\n"
         json += "\"startHour\":\"\(getStartHour())\",\n"
         json += "\"endHour\":\"\(getEndHour())\",\n"
         json += "\"startDate\":\"\(getStartDate())\",\n"
-        json += "\"endDate\":\"\(getEndDate())\"\n"
+        json += "\"endDate\":\"\(getEndDate())\"}\n"
         return json
     }
 }
@@ -153,10 +157,10 @@ extension Status {
 }
 extension GradeAux {
     func toJson() -> String {
-        var json = "\"gradeAuxId\":\(getGradeAuxId()),\n"
+        var json = "{\"gradeAuxId\":\(getGradeAuxId()),\n"
         json += "\"letter\":\"\(getLetter())\",\n"
         json += "\"pointsStart\":\"\(getPointsStart())\",\n"
-        json += "\"pointsEnd\":\"\(getPointsEnd())\"\n"
+        json += "\"pointsEnd\":\"\(getPointsEnd())\"}\n"
         return json
     }
 }
@@ -171,82 +175,82 @@ extension College {
         FileWriter.writeIntoFile(createStudentJson(), "student.json")
         FileWriter.writeIntoFile(createStudentClassJson(), "studentClass.json")
         FileWriter.writeIntoFile(createScheduleJson(), "schedule.json")
-        FileWriter.writeIntoFile(createFunctionJson(), "function.json")
-        FileWriter.writeIntoFile(createCountryJson(), "country.json")
-        FileWriter.writeIntoFile(createStatusJson(), "status.json")
+        //FileWriter.writeIntoFile(createFunctionJson(), "function.json")
+        //FileWriter.writeIntoFile(createCountryJson(), "country.json")
+        //FileWriter.writeIntoFile(createStatusJson(), "status.json")
         FileWriter.writeIntoFile(createGradeAuxJson(), "gradeAux.json")
     }
     
     func createEmployeeJson() -> String {
-        var json = "employee: [\n"
+        var json = "{\"employee\": [\n"
         for e in getEmployees() {
-            json += "{\n" + e.toJson() + "},\n"
+            json += "\n" + e.toJson() + ",\n"
         }
-        return String(json.dropLast(2)) + "]\n"
+        return String(json.dropLast(2)) + "]}\n"
     }
     
     func createDepartmentJson() -> String {
-        var json = "department: [\n"
+        var json = "{\"department\": [\n"
         for d in getDepartments() {
-            json += "{\n" + d.toJson() + "},\n"
+            json += "\n" + d.toJson() + ",\n"
         }
-        return String(json.dropLast(2)) + "]\n"
+        return String(json.dropLast(2)) + "]}\n"
     }
     
     func createDepartmentEmployeeJson() -> String {
-        var json = "departmentEmployee: [\n"
+        var json = "{\"departmentEmployee\": [\n"
         for de in getDepartmentEmployees() {
-            json += "{\n" + de.toJson() + "},\n"
+            json += "\n" + de.toJson() + ",\n"
         }
-        return String(json.dropLast(2)) + "]\n"
+        return String(json.dropLast(2)) + "]}\n"
     }
     
     func createProgramJson() -> String {
-        var json = "program: [\n"
+        var json = "{\"program\": [\n"
         for p in getPrograms() {
-            json += "{\n" + p.toJson() + "},\n"
+            json += "\n" + p.toJson() + ",\n"
         }
-        return String(json.dropLast(2)) + "]\n"
+        return String(json.dropLast(2)) + "]}\n"
     }
     
     func createCourseJson() -> String {
-        var json = "course: [\n"
+        var json = "{\"course\": [\n"
         for c in getCourses() {
-            json += "{\n" + c.toJson() + "},\n"
+            json += "\n" + c.toJson() + ",\n"
         }
-        return String(json.dropLast(2)) + "]\n"
+        return String(json.dropLast(2)) + "]}\n"
     }
     
     func createClasseJson() -> String {
-        var json = "classe: [\n"
+        var json = "{\"classe\": [\n"
         for c in getClasses() {
-            json += "{\n" + c.toJson() + "},\n"
+            json += "\n" + c.toJson() + ",\n"
         }
-        return String(json.dropLast(2)) + "]\n"
+        return String(json.dropLast(2)) + "]}\n"
     }
     
     func createStudentJson() -> String {
-        var json = "student: [\n"
+        var json = "{\"student\": [\n"
         for s in getStudents() {
-            json += "{\n" + s.toJson() + "},\n"
+            json += "\n" + s.toJson() + ",\n"
         }
-        return String(json.dropLast(2)) + "]\n"
+        return String(json.dropLast(2)) + "]}\n"
     }
     
     func createStudentClassJson() -> String {
-        var json = "studentClass: [\n"
+        var json = "{\"studentClass\": [\n"
         for sc in getStudentClasses() {
-            json += "{\n" + sc.toJson() + "},\n"
+            json += "\n" + sc.toJson() + ",\n"
         }
-        return String(json.dropLast(2)) + "]\n"
+        return String(json.dropLast(2)) + "]}\n"
     }
     
     func createScheduleJson() -> String {
-        var json = "schedule: [\n"
+        var json = "{\"schedule\": [\n"
         for s in getSchedules() {
-            json += "{\n" + s.toJson() + "},\n"
+            json += "\n" + s.toJson() + ",\n"
         }
-        return String(json.dropLast(2)) + "]\n"
+        return String(json.dropLast(2)) + "]}\n"
     }
     
     func createFunctionJson() -> String {
@@ -262,10 +266,10 @@ extension College {
     }
     
     func createGradeAuxJson() -> String {
-        var json = "gradeAux: [\n"
+        var json = "{\"gradeAux\": [\n"
         for g in Grade.grades {
-            json += "{\n" + g.toJson() + "},\n"
+            json += "\n" + g.toJson() + ",\n"
         }
-        return String(json.dropLast(2)) + "]\n"
+        return String(json.dropLast(2)) + "]}\n"
     }
 }

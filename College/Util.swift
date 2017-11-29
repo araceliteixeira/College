@@ -12,17 +12,17 @@ class Util {
     static let dateFormatter = DateFormatter()
     static let dateFormat = "yyyy-MM-dd"
     
-    static func convertStringToDate(_ stringDate: String) -> NSDate {
+    static func convertStringToDate(_ stringDate: String) -> NSDate? {
         if stringDate == "" {
-            return NSDate()
+            return nil
         }
         dateFormatter.dateFormat = dateFormat
         return dateFormatter.date(from:stringDate)! as NSDate
     }
     
-    static func convertDateToString(_ date: NSDate) -> String {
+    static func convertDateToString(_ date: NSDate?) -> String {
         dateFormatter.dateFormat = dateFormat
-        return dateFormatter.string(from:date as Date)
+        return date != nil ? dateFormatter.string(from:date as! Date) : ""
     }
     
     static func pad(_ string: String, _ size: Int) -> String {
